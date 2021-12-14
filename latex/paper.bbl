@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+
+\bibitem{ogata}
+K.~Ogata, {\em Discrete-Time Control Systems}.
+\newblock USA: Prentice-Hall, Inc., 1987.
+
+\bibitem{camilo2}
+C.~Lozoya, C.~Mendoza, A.~Aguilar, A.~Román, and R.~Castelló, ``Sensor-based
+  model driven control strategy for precision irrigation,'' {\em Journal of
+  Sensors}, vol.~2016, 2016.
+
+\bibitem{camilo1}
+C.~Lozoya, C.~Mendoza, L.~Mejía, J.~Quintana, G.~Mendoza, M.~Bustillos,
+  O.~Arras, and L.~Solís, ``Model predictive control for closed-loop
+  irrigation,'' in {\em IFAC Proceedings Volumes (IFAC-PapersOnline)}, vol.~19,
+  pp.~4429--4434, 2014.
+
+\bibitem{camilo3}
+C.~Lozoya, A.~Favela-Contreras, A.~Aguilar-Gonzalez, L.~C. Félix-Herrán, and
+  L.~Orona, ``Energy-efficient wireless communication strategy for precision
+  agriculture irrigation control,'' {\em Sensors}, vol.~21, no.~16, 2021.
+
+\bibitem{osbook}
+A.~Silberschatz, P.~B. Galvin, and G.~Gagne, {\em Operating System Concepts,
+  10th Edition}.
+\newblock Wiley, 2018.
+
+\end{thebibliography}
