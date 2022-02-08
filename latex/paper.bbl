@@ -25,4 +25,8 @@ A.~Silberschatz, P.~B. Galvin, and G.~Gagne, {\em Operating System Concepts,
   10th Edition}.
 \newblock Wiley, 2018.
 
+\bibitem{compnet}
+A.~S. Tanenbaum and D.~J. Wetherall, {\em Computer Networks}.
+\newblock USA: Prentice Hall Press, 5th~ed., 2010.
+
 \end{thebibliography}

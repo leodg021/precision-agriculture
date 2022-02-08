@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.13)  13 DEC 2021 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.13)  8 FEB 2022 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -186,98 +186,65 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip73
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count281
-\lst@gtempboxa=\box60
-\lst@token=\toks24
-\lst@length=\count282
-\lst@currlwidth=\dimen156
-\lst@column=\count283
-\lst@pos=\count284
-\lst@lostspace=\dimen157
-\lst@width=\dimen158
-\lst@newlines=\count285
-\lst@lineno=\count286
-\lst@maxwidth=\dimen159
-(C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count287
-\lst@skipnumbers=\count288
-\lst@framebox=\box61
-)
-(C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
-File: listings.cfg 2020/03/24 1.8d listings configuration
-))
-Package: listings 2020/03/24 1.8d (Carsten Heinz)
-(C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2021/10/11 v1.3b Standard LaTeX Color (DPC)
-
-(C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
 ) (C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen160
-\captionmargin@=\dimen161
-\captionwidth=\dimen162
-\caption@tempdima=\dimen163
-\caption@indent=\dimen164
-\caption@parindent=\dimen165
-\caption@hangindent=\dimen166
+\captionmargin=\dimen156
+\captionmargin@=\dimen157
+\captionwidth=\dimen158
+\caption@tempdima=\dimen159
+\caption@indent=\dimen160
+\caption@parindent=\dimen161
+\caption@hangindent=\dimen162
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count289
-\c@continuedfloat=\count290
-Package caption Info: listings package is loaded.
+\c@caption@flags=\count281
+\c@continuedfloat=\count282
 )
 (C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count291
-\c@subtable=\count292
-) (C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+\c@subfigure=\count283
+\c@subtable=\count284
 )
 (C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count293
-\l__pdf_internal_box=\box62
+\l__color_backend_stack_int=\count285
+\l__pdf_internal_box=\box60
 ) (paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 (C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count294
-\scratchdimen=\dimen167
-\scratchbox=\box63
-\nofMPsegments=\count295
-\nofMParguments=\count296
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count297
-\MPscratchDim=\dimen168
-\MPnumerator=\count298
-\makeMPintoPDFobject=\count299
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count286
+\scratchdimen=\dimen163
+\scratchbox=\box61
+\nofMPsegments=\count287
+\nofMParguments=\count288
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count289
+\MPscratchDim=\dimen164
+\MPnumerator=\count290
+\makeMPintoPDFobject=\count291
+\everyMPtoPDFconversion=\toks25
 )
 (C:\Users\leodg\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -289,276 +256,94 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count300
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
-
- []
-
-[1
+ [1
 
 {C:/Users/leodg/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
-
- []
-
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
-
- []
-
-
-Package caption Warning: \label without proper reference on input line 108.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:1' on page 3 undefined on input line 104.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
-
- []
-
 <./images//dynamics.png, id=16, 161.403pt x 98.769pt>
 File: ./images//dynamics.png Graphic file (type png)
 <use ./images//dynamics.png>
-Package pdftex.def Info: ./images//dynamics.png  used on input line 107.
+Package pdftex.def Info: ./images//dynamics.png  used on input line 85.
 (pdftex.def)             Requested size: 161.4026pt x 98.76874pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-
- []
-
-[3 <./images//dynamics.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
-
- []
-
-
-Package caption Warning: \label without proper reference on input line 183.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:2' on page 4 undefined on input line 179.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-
- []
-
-[4]
-<./images//phil.png, id=25, 124.66576pt x 121.6545pt>
+ [3 <./images//dynamics.png>]
+<./images//phil.png, id=21, 124.66576pt x 121.6545pt>
 File: ./images//phil.png Graphic file (type png)
 <use ./images//phil.png>
-Package pdftex.def Info: ./images//phil.png  used on input line 182.
+Package pdftex.def Info: ./images//phil.png  used on input line 160.
 (pdftex.def)             Requested size: 124.66544pt x 121.65419pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--189
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
-
- []
-
-[5 <./images//phil.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
-
- []
-
-[7] [8] [9]
-
-Package caption Warning: \label without proper reference on input line 356.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:3' on page 10 undefined on input line 350.
-
-
-Package caption Warning: \label without proper reference on input line 360.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:3a' on page 10 undefined on input line 350.
-
-
-Package caption Warning: \label without proper reference on input line 381.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:3d' on page 10 undefined on input line 350.
-
-
-Package caption Warning: \label without proper reference on input line 367.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:3b' on page 10 undefined on input line 350.
-
-
-Package caption Warning: \label without proper reference on input line 374.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:3c' on page 10 undefined on input line 350.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 352--353
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
-
- []
-
-<./images//area1.png, id=44, 167.4255pt x 119.84775pt>
-File: ./images//area1.png Graphic file (type png)
-<use ./images//area1.png>
-Package pdftex.def Info: ./images//area1.png  used on input line 363.
+ [4] [5 <./images//phil.png>]
+<./images//freq.png, id=30, 549.85425pt x 268.00125pt>
+File: ./images//freq.png Graphic file (type png)
+<use ./images//freq.png>
+Package pdftex.def Info: ./images//freq.png  used on input line 198.
+(pdftex.def)             Requested size: 195.0pt x 95.045pt.
+<./images//time.png, id=32, 855.195pt x 244.5135pt>
+File: ./images//time.png Graphic file (type png)
+<use ./images//time.png>
+Package pdftex.def Info: ./images//time.png  used on input line 209.
+(pdftex.def)             Requested size: 390.0pt x 111.5075pt.
+ [6 <./images//freq.png>] [7 <./images//time.png>]
+<./images//area_ideal.png, id=41, 371.3875pt x 264.99pt>
+File: ./images//area_ideal.png Graphic file (type png)
+<use ./images//area_ideal.png>
+Package pdftex.def Info: ./images//area_ideal.png  used on input line 251.
+(pdftex.def)             Requested size: 185.25238pt x 132.18332pt.
+<./images//area_mutex.png, id=42, 167.4255pt x 119.84775pt>
+File: ./images//area_mutex.png Graphic file (type png)
+<use ./images//area_mutex.png>
+Package pdftex.def Info: ./images//area_mutex.png  used on input line 258.
 (pdftex.def)             Requested size: 185.25238pt x 132.61012pt.
-<./images//area2.png, id=45, 167.4255pt x 119.84775pt>
-File: ./images//area2.png Graphic file (type png)
-<use ./images//area2.png>
-Package pdftex.def Info: ./images//area2.png  used on input line 370.
-(pdftex.def)             Requested size: 185.25238pt x 132.61012pt.
-<./images//area3.png, id=46, 167.4255pt x 119.84775pt>
-File: ./images//area3.png Graphic file (type png)
-<use ./images//area3.png>
-Package pdftex.def Info: ./images//area3.png  used on input line 377.
-(pdftex.def)             Requested size: 185.25238pt x 132.61012pt.
-<./images//area4.png, id=47, 167.4255pt x 119.84775pt>
-File: ./images//area4.png Graphic file (type png)
-<use ./images//area4.png>
-Package pdftex.def Info: ./images//area4.png  used on input line 384.
-(pdftex.def)             Requested size: 185.25238pt x 132.61012pt.
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
-
- []
-
-(paper.bbl [11 <./images//area1.png> <./images//area2.png> <./images//area3.png
-> <./images//area4.png>]) [12] (paper.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [8 <./images//area_ideal.png> <./images//area_mutex.png>]
+<./images//area_delay.png, id=47, 371.3875pt x 264.99pt>
+File: ./images//area_delay.png Graphic file (type png)
+<use ./images//area_delay.png>
+Package pdftex.def Info: ./images//area_delay.png  used on input line 276.
+(pdftex.def)             Requested size: 185.25238pt x 132.18332pt.
+<./images//area_mutex_delay.png, id=48, 371.3875pt x 264.99pt>
+File: ./images//area_mutex_delay.png Graphic file (type png)
+<use ./images//area_mutex_delay.png>
+Package pdftex.def Info: ./images//area_mutex_delay.png  used on input line 283
+.
+(pdftex.def)             Requested size: 185.25238pt x 132.18332pt.
+<./images//area_tdm.png, id=49, 371.3875pt x 264.99pt>
+File: ./images//area_tdm.png Graphic file (type png)
+<use ./images//area_tdm.png>
+Package pdftex.def Info: ./images//area_tdm.png  used on input line 303.
+(pdftex.def)             Requested size: 185.25238pt x 132.18332pt.
+<./images//area_tdm_delay.png, id=50, 371.3875pt x 264.99pt>
+File: ./images//area_tdm_delay.png Graphic file (type png)
+<use ./images//area_tdm_delay.png>
+Package pdftex.def Info: ./images//area_tdm_delay.png  used on input line 310.
+(pdftex.def)             Requested size: 185.25238pt x 132.18332pt.
+ [9 <./images//area_delay.png> <./images//area_mutex_delay.png>]
+(paper.bbl [10 <./images//area_tdm.png> <./images//area_tdm_delay.png>])
+[11] (paper.aux) ) 
 Here is how much of TeX's memory you used:
- 6924 strings out of 478659
- 112001 string characters out of 2845919
- 647868 words of memory out of 3000000
- 24982 multiletter control sequences out of 15000+600000
- 411826 words of font info for 56 fonts, out of 8000000 for 9000
+ 5069 strings out of 478659
+ 87884 string characters out of 2845919
+ 394849 words of memory out of 3000000
+ 23148 multiletter control sequences out of 15000+600000
+ 411658 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,9n,63p,563b,1764s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmbxti10.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leodg/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/leodg/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/leodg/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/leod
-g/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Us
-ers/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pf
+ 55i,9n,63p,628b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
+<C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/leodg/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/leodg/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leodg/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/leod
+g/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Us
+ers/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pf
 b><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmti10.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmtt10.pfb>
-Output written on paper.pdf (12 pages, 331195 bytes).
+cmr12.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr17.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><C:/Users/leodg/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmti10.pfb>
+Output written on paper.pdf (11 pages, 557327 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

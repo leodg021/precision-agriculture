@@ -4,32 +4,10 @@
 \usepackage{graphicx}
 \usepackage[ruled, vlined]{algorithm2e}
 \usepackage{algpseudocode}
-\usepackage{listings}
-\usepackage{color}
 \usepackage{caption}
 \usepackage{subcaption}
 
 \graphicspath{ {./images/} }
-
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-
-\lstset{language=Python,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
-}
 
 \title{On Synchronization Algorithms for the Optimization of Resources in Agriculture}
 \author{Leonardo D. Garcia}
@@ -40,28 +18,28 @@
 \maketitle
 
 \begin{abstract}
-This report examines a systems-based approach on the synchronization and optimization of resources in the agriculture sector. By providing an algorithmic aspect inspired by the dining philosophers problem from operating systems theory, it is possible to generate a concurrent program that will simulate the system dynamics of the plant models considering the sharing of limited resources such as water.
+This report examines a systems-based approach on the synchronization and optimization of resources in the agriculture sector. By providing an algorithmic aspect inspired by the dining philosophers problem from operating systems theory and multiplexing techniques from computer networks theory, it is possible to generate a concurrent program that will simulate the system dynamics of the plant models considering the sharing of limited resources such as water.
 \end{abstract}
 
 \small
-\textbf{\textit{Keywords:}} multithreading, irrigation, algorithm, resources.
+\textbf{\textit{Keywords:}} multithreading, irrigation, algorithm, resources, multiplexing.
 
 \section{Objectives}
-The objectives of this paper focus on the capability of the present individual to formalize a contemporary viewpoint into the techniques that can be used in control engineering for the regulation and stability of dynamical systems. \\
+The objectives of this paper focus on the capability of the present individual to formalize a contemporary viewpoint into the techniques that can be used in control engineering for the regulation and stability of dynamical systems.
 
-Operating systems are the software pillars that holds together the organized aspects of the computer architecture. Although a computer by itself can work properly, the operating system controls and coordinates the management of physical resources inside the machine to provide the swiftest and best regulated of computing procedures. \\
+Operating systems are the software pillars that holds together the organized aspects of the computer architecture. Although a computer by itself can work properly, the operating system controls and coordinates the management of physical resources inside the machine to provide the swiftest and best regulated of computing procedures.
 
-Given the accelerated abilities of the processors, it has been proposed that one can employ the very same algorithms that the OS utilizes for their handling of shared data and memory locations in a similar way that generates an analogy to the inputs to withhold the stability of a plant—an irrigation area that must share its water with other adjacent sectors. \\
+Given the accelerated abilities of the processors, it has been proposed that one can employ the very same algorithms that the OS utilizes for their handling of shared data and memory locations in a similar way that generates an analogy to the inputs to withhold the stability of a plant—an irrigation area that must share its water with other adjacent sectors.
 
-In essence, the purpose of this experiment is in the adaptation of a concurrent, synchronization algorithm from operating systems theory into a simple yet elegant solution that can be used for the reservation of input energy. \\
+In essence, the purpose of this experiment is in the adaptation of a concurrent, synchronization algorithm from operating systems theory into a simple yet elegant solution that can be used for the reservation of input energy. At the same time, a similarly powerful alternative is demonstrated from the great utilities of computer network protocols.
 
 \section{Theoretical Framework}
 
 \subsection{Irrigation Areas}
 
-An irrigation area is a finite-sized polygonal space where crops are grown throughout the year’s seasons. Like other real functional systems, they can be modeled mathematically as a linear-time invariant (LTI) system. A disadvantage in trying to do so lies on the fact that real systems usually present nonlinearities which complicate their analysis. \\
+An irrigation area is a finite-sized polygonal space where crops are grown throughout the year’s seasons. Like other real functional systems, they can be modeled mathematically as a linear-time invariant (LTI) system. A disadvantage in trying to do so lies on the fact that real systems usually present nonlinearities which complicate their analysis.
 
-An alternative to preserve the advantages and strengths of an LTI system is by linearizing the plant on different operating points. As a result, a piecewise model of the plant is generated. \\
+An alternative to preserve the advantages and strengths of an LTI system is by linearizing the plant on different operating points. As a result, a piecewise model of the plant is generated.
 
 For this LTI models, a state-space approach is taken instead of a transfer function model to consider the controllability and observability of the plant for a MIMO model \cite{ogata}. The state equations for these cases are presented in Equations \ref{eqn:1} \& \ref{eqn:2}.
 
@@ -74,9 +52,9 @@ For this LTI models, a state-space approach is taken instead of a transfer funct
 \mathbf{y}(t) = \mathbf{C x}(t) + \mathbf{D u}(t)
 \end{equation}
 
-$\mathbf{A}$ is the state matrix, $\mathbf{B}$ is the input matrix, $\mathbf{C}$ is the output matrix, and $\mathbf{D}$ is the transmission matrix. To avoid any major complication with the study of the irrigation areas, second-order models were identified from each of four distinct areas in previous studies from Dr. Camilo Lozoya. \\
+$\mathbf{A}$ is the state matrix, $\mathbf{B}$ is the input matrix, $\mathbf{C}$ is the output matrix, and $\mathbf{D}$ is the transmission matrix. To avoid any major complication with the study of the irrigation areas, second-order models were identified from each of four distinct areas in previous studies from Dr. Camilo Lozoya.
 
-These models depend thus on two state variables and two input variables. The state variables are the soil moisture $\theta(t)$ and the rate of change of the moisture with respect to time $\dot{\theta}(t)$. The input variables are from the other hand the irrigation level $ir(t)$ and the evapotranspiration (ETO) of the soil. The ETO is modified by a proportional parameter called $K_c$, which is denominated the crop constant and is a dimensional constant to regulate every area \cite{camilo2}. These changes from area to area. \\
+These models depend thus on two state variables and two input variables. The state variables are the soil moisture $\theta(t)$ and the rate of change of the moisture with respect to time $\dot{\theta}(t)$. The input variables are from the other hand the irrigation level $ir(t)$ and the evapotranspiration (ETO) of the soil. The ETO is modified by a proportional parameter called $K_c$, which is denominated the crop constant and is a dimensional constant to regulate every area \cite{camilo2}. These change from area to area.
 
 In the end, the vector expressions for these variables are displayed in Equations \ref{eqn:3} \& \ref{eqn:4}.
 
@@ -97,20 +75,20 @@ ir(t) & K_c ETO(t)
 ^T
 \end{equation}
 
-The actual state equations must be separated according to three levels. The denominated previous investigations from Dr. Lozoya categorize the advancements of water consumption unto two thresholds \cite{camilo1}. The first threshold separates what is considered the gravitational water, which is the excess water that remains after an irrigation cycle. It can be found at the top of the moisture level diagram. \\
+The actual state equations must be separated according to three levels. The denominated previous investigations from Dr. Lozoya categorize the advancements of water consumption unto two thresholds \cite{camilo1}. The first threshold separates what is considered the gravitational water, which is the excess water that remains after an irrigation cycle. It can be found at the top of the moisture level diagram.
 
-The next phase is the stable region, which is the most preferrable because it keeps in place the safety of the plant. No hazardous risks relating to water shortage occur at this point. There is a middle bias line that represents the most optimal operating point for the area. This specific offset depends on the irrigation area and most of the times can only be estimated experimentally. \\
+The next phase is the stable region, which is the most preferrable because it keeps in place the safety of the plant. No hazardous risks relating to water shortage occur at this point. There is a middle bias line that represents the most optimal operating point for the area. This specific offset depends on the irrigation area and most of the times can only be estimated experimentally.
 
-Hydric stress then becomes an urgent problem once the plant leaves the stable region. It is at this point where the lack of water becomes significative to the vegetation and therefore can spawn visible damage sooner or later pertaining to the drought of the crop region. Fig. \ref{fig:1} depicts a crude diagram of these operating zones for a sample model. \\
+Hydric stress then becomes an urgent problem once the plant leaves the stable region. It is at this point where the lack of water becomes significant to the vegetation and therefore can spawn visible damage sooner or later pertaining to the drought of the crop region. Fig. \ref{fig:dyn} depicts a crude diagram of these operating zones for a sample model.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \includegraphics{dynamics}
-\label{fig:1}
 \centering
 \caption{Levels of soil moisture for the plant.}
+\label{fig:dyn}
 \end{figure}
 
-In total, three state matrices and three input matrices were formed depending on the level of water consumption present \cite{camilo3}. These are presented as Equations \ref{eqn:5} to \ref{eqn:10} here below. \\
+In total, three state matrices and three input matrices were formed depending on the level of water consumption present \cite{camilo3}. These are presented as Equations \ref{eqn:5} to \ref{eqn:10} here below.
 
 \begin{equation}
 \label{eqn:5}
@@ -168,30 +146,30 @@ In total, three state matrices and three input matrices were formed depending on
 
 \subsection{Multithreading}
 
-A process thread is a unit of processor utilization that permits the running of a set of operations within the core of the computer. Modern computers permit the capability of running multiple threads in a single processor. This allows the event of running various processes simultaneously. \\
+A process thread is a unit of processor utilization that permits the running of a set of operations within the core of the computer. Modern computers permit the capability of running multiple threads in a single processor. This allows the event of running various processes simultaneously.
 
-While this seems to propose the opportunity to run processes in parallel, it does not work like that. Threads are concurrent: they each advance step by step waiting for the others to continue. Because they interrupt each other little by little at the high frequencies of the computer clock, it can be felt that they operate asynchronously. \\
+While this seems to propose the opportunity to run processes in parallel, it does not work like that. Threads are concurrent: they each advance step by step waiting for the others to continue. Because they interrupt each other little by little at the high frequencies of the computer clock, it can be felt that they operate asynchronously.
 
-The act of running different threads in a single core to apparent a parallel process is called multithreading. Because they do not work in parallel, frequently problems arise relating to the synchronization of resources, where threads may quarrel between each other of the utilization of one. Another problem can be if the threads wait each other to finish, creating a cycle that will never end. This event is termed a deadlock in computer science. \\
+The act of running different threads in a single core to apparent a parallel process is called multithreading. Because they do not work in parallel, frequently problems arise relating to the synchronization of resources, where threads may quarrel between each other of the utilization of one. Another problem can be if the threads wait each other to finish, creating a cycle that will never end. This event is termed a deadlock in computer science.
 
 \subsubsection{Dining Philosophers Problem}
 
-To solve the problem, a mind experiment was performed by computer scientists Edsger W. Dijkstra and Tony Hoare back in the 1960s. Let there be \emph{n} philosophers seated in a round table. Before them come plates of noodles, each for each philosopher \cite{osbook}. Fig. \ref{fig:2} exemplifies this. \\
+To solve the problem, a mind experiment was performed by computer scientists Edsger W. Dijkstra and Tony Hoare back in the 1960s. Let there be \emph{n} philosophers seated in a round table. Before them come plates of noodles, each for each philosopher \cite{osbook}. Fig. \ref{fig:phil} exemplifies this.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \includegraphics{phil}
-\label{fig:2}
 \centering
 \caption{Dining philosophers table.}
+\label{fig:phil}
 \end{figure}
 
-To eat their noodles, they must use a pair of chopsticks. Nonetheless, they find a problem: everyone must share at least one chopstick with their adjacent neighbor. Therefore, one’s right neighbor shares their left chopstick, and the parallel with the left neighbor. Because one must use the whole pair to be able to eat, there comes the question: who eats? \\
+To eat their noodles, they must use a pair of chopsticks. Nonetheless, they find a problem: everyone must share at least one chopstick with their adjacent neighbor. Therefore, one’s right neighbor shares their left chopstick, and the parallel with the left neighbor. Because one must use the whole pair to be able to eat, there comes the question: who eats?
 
-The solution is very simple, although it sounds complex to implement whoever reaches the chopsticks first gets to eat first. All others who did not reach them must wait for the others to eat, hoping not to starve while waiting. When those who are eating finish, they leave the chopsticks back in the table, and let others (whoever reaches them first) to eat. To implement it in code, one must use a concept called a mutex. \\
+The solution is very simple, although it sounds complex to implement whoever reaches the chopsticks first gets to eat first. All others who did not reach them must wait for the others to eat, hoping not to starve while waiting. When those who are eating finish, they leave the chopsticks back in the table, and let others (whoever reaches them first) to eat. To implement it in code, one must use a concept called a mutex.
 
-A mutex is an abstract object that can be blocked so that if other threads attempt to grab them, they are unable and must wait for the process to release the mutex. Hence, they permit the synchronization of concurrent processes without the fear of robbing the resources at an inappropriate moment. \\
+A mutex is an abstract object that can be blocked so that if other threads attempt to grab them, they are unable and must wait for the process to release the mutex. Hence, they permit the synchronization of concurrent processes without the fear of robbing the resources at an inappropriate moment.
 
-The operation to collect the mutexes if available is called \emph{wait}, because one waits for them to be free. To release them, one simply \emph{signals} the computer that they are free once again. The algorithm, short and easy, is shown below. \\
+The operation to collect the mutexes if available is called \emph{wait}, because one waits for them to be free. To release them, one simply \emph{signals} the computer that they are free once again. The algorithm, short and easy, is shown below. \vfill
 
 \begin{algorithm}[H]
 \SetAlgoLined
@@ -210,189 +188,147 @@ The operation to collect the mutexes if available is called \emph{wait}, because
 \caption{Dining philosophers problem}
 \end{algorithm}
 
+\subsection{Time Division Multiplexing}
+
+In the context of computer networks, it is important to emphasize that the conjunction of parallel processes require the proper organization of time and resources from the central control station. Along the various protocols for the delivery of signals and data across communication channels, multiple techniques have been formulated with the intention of creating the most adequate strategy for every distinct process.
+
+Among the classic approaches exploited from the very scope of the physical layer are frequency division multiplexing (FDM) and time division multiplexing (TDM). Frequency division multiplexing attempts to utilize the best of the frequency spectrum to divide the concurrent processes according to their angular velocity \cite{compnet}. This is exemplified in Fig. \ref{fig:freq} below.
+
+\begin{figure}[ht]
+\includegraphics[width=0.5\textwidth]{freq}
+\centering
+\caption{Frequency division multiplexing.}
+\label{fig:freq}
+\end{figure}
+
+With this, one tries to explain that information can be sent in signals composed from other superposed sinusoidal waves of information that, according to the original studies proposed by French mathematician Joseph Fourier, allow for a structured filter system to select (multiplex) the desired information for the right process.
+
+While this is undoubtedly elegant and powerful, it is tough and impractical to transform adjunct information into frequency properties when the case is to manage and synchronize resources. For this scenario is where TDM arrives. By giving a momentary space in accordance to a round-robin scheduling plan, one can ensure that the concurrent processes seize their resources with the avoidance of access collision, as presented in Fig. \ref{fig:time}.
+
+\begin{figure}[ht]
+\includegraphics[width=1\textwidth]{time}
+\centering
+\caption{Time division multiplexing.}
+\label{fig:time}
+\end{figure}
+
+Although the traditional outline employs a circular, equal-time division, it is possible to assign priority in terms of statistical information, be it from delivery or receipt of information through the system's complete history. Under this, the protocol adopts the better name of statistical time division multiplexing (STDM).
+
 \section{Experiment}
 
 \subsection{Program Description}
 
-The program can therefore be passed to a real computer language where the practical aspects of coding in the real world are put to the test. The language picked for the task was Python, because it is a very simple yet useful language with a broad range of available libraries for things like numeric operations and multithreading. \\
+The program can therefore be passed to a real computer language where the practical aspects of coding in the real world are put to the test. The language picked for the task was Python, because it is a very simple yet useful language with a broad range of available libraries for things like numeric operations and multithreading.
 
-As a first job, it is important to define the object to simulate. It is proposed that the irrigation area be defined as a class, where one group several instances to recreate the adjacent groups of irrigation areas. This class must possess various attributes, including the crop constant and threshold levels for simulation. \\
+As a first job, it is important to define the object to simulate. It is proposed that the irrigation area be defined as a class, where one group several instances to recreate the adjacent groups of irrigation areas. This class must possess various attributes, including the crop constant and threshold levels for simulation.
 
-The methods recommended for the class (besides the constructor) include irrigation dynamics function that returns the next state for the plant according to the input variables and the previous states of the system. According to the soil moisture level, the state equation can take one of the many forms planted in Equations 5 to 10. \\
+The methods recommended for the class (besides the constructor) include irrigation dynamics function that returns the next state for the plant according to the input variables and the previous states of the system. According to the soil moisture level, the state equation can take one of the many forms planted in Equations 5 to 10.
 
-When running the simulation, the control action depends on the region where the humidity finds itself, and whether other resources are available. Because all irrigation areas use the same water, this water source will be blocked as a mutex. As a result, when one is in the hydric stress region, it can only be watered if no other area is under irrigation. When it reaches the gravitational water region, it releases the mutex for the rest of the areas to fight for them. \\
+When running the simulation, the control action depends on the region where the humidity finds itself, and whether other resources are available. Because all irrigation areas use the same water, this water source will be blocked as a mutex. As a result, when one is in the hydric stress region, it can only be watered if no other area is under irrigation. When it reaches the gravitational water region, it releases the mutex for the rest of the areas to fight for them.
 
-Section \ref{code:1} presents a view into the Python script, including documentation and comments that serve as explanatory aid for the reader. \\
+For the case of the TDM application, the user provides a lapse of time of 24 hours (1,140 minutes) of allowance for the individual irrigation of the areas. Unlike the previous algorithm where the allocation of resources depend on who attains it first, TDM just demands for short periods of time defined through modular arithmetic with the formula
 
-\subsection{Python Code}
-\label{code:1}
+\begin{equation}
+\label{eqn:11}
+0 < t \pmod{TIME \times TOTAL\:AREAS} - TIME \times i < TIME
+\end{equation}
 
-\begin{lstlisting}
-
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.io import loadmat
-
-class AreaSimulation:
-
-    def __init__(self, xk_initial, Kc, control_high, control_low, irrigation_value):
-        self.xk_initial = xk_initial
-        self.xk_array = np.empty(0)
-        self.ir_array = np.empty(0)
-        self.Kc = Kc
-        self.control_high = control_high
-        self.control_low = control_low
-        self.irrigation_value = irrigation_value
-        self.eto_array = np.empty(0)
-        self.t_array = np.empty(0)
-
-    def irrigation_dynamics_function(self, xk_initial, ir_act, eto_act, Kc):
-
-        A_above = np.array([[0.98501, 0.00001], [0.00001, 0.98501]])
-        A_middle = np.array([[1.00000, 0.00001], [0.00001, 0.98501]])
-        A_below = np.array([[1.00000, 0.00001], [0.00001, 0.98501]])
-
-        B_above = np.array([[0.00245, -0.00004], [0.00300, -0.00020]])
-        B_middle = np.array([[0.00135, -0.00060], [0.00325, -0.00050]])
-        B_below = np.array([[0.00125, -0.00005], [0.00150, -0.00035]])
-
-        C = np.array([1, 0])
-
-        high_limit = 7.0
-        low_limit = -7.0
-        high_threshold = 5.0
-        low_threshold = -5.0
-
-        xk_act = xk_initial
-        uk_act = np.array([ir_act, Kc*eto_act], dtype=object)
-
-        xk_next = np.empty(2)
-
-        if xk_act[0] > high_threshold:
-            xk_next = np.dot(A_above, xk_act) + np.dot(B_above, uk_act)
-        elif xk_act[0] > low_threshold:
-            xk_next = np.dot(A_middle, xk_act) + np.dot(B_middle, uk_act)
-        else:
-            xk_next = np.dot(A_below, xk_act) + np.dot(B_below, uk_act)
-            
-        if xk_next[0] > high_limit:
-            xk_next[0] = high_limit
-        elif xk_next[0] < low_limit:
-            xk_next[0] = low_limit
-
-        return xk_next
-    
-    def run(self, filename):
-        data = loadmat(filename)
-        self.eto_array = data['eto_array']
-        
-        simulation_period = self.eto_array.size
-        self.t_array = np.arange(simulation_period)
-        
-        self.xk_array = np.empty([2, simulation_period])
-        self.ir_array = np.empty([simulation_period])
-        self.ir_array[0] = 0.0
-        
-        for t in range(simulation_period):
-            xk_next = self.irrigation_dynamics_function(self.xk_initial, self.ir_array[t], self.eto_array[t], self.Kc)
-            self.xk_initial = xk_next
-            self.xk_array[0, t] = xk_next[0]
-            self.xk_array[1, t] = xk_next[1]
-            
-            if t == simulation_period-1:
-                break
-            
-            if xk_next[0] > self.control_high:
-                self.ir_array[t+1] = 0.0
-            elif xk_next[0] < self.control_low:
-                self.ir_array[t+1] = self.irrigation_value
-            else:
-                self.ir_array[t+1] = self.ir_array[t]
-    
-    def display(self, title):
-        simulation_period = self.eto_array.size
-        
-        plt.title(title)
-        plt.plot(self.t_array, self.xk_array[0], 'b-', 
-                 self.t_array, np.zeros(simulation_period), 'k--',
-                 self.t_array, self.control_high*np.ones(simulation_period), 'k:',
-                 self.t_array, self.control_low*np.ones(simulation_period), 'k:')
-        plt.axis([0, simulation_period, -8, 8])
-        
-        plt.show()
-
-
-
-if __name__ == "__main__":
-    Areas = [None]*4
-
-    xk_initial = [np.array([5.0, 0.0]), np.array([2.0, 0.0]),
-                np.array([2.0, 0.0]), np.array([-2.0, 0.0])]
-    Kc = [1.0, 1.2, 1.4, 0.8]
-    control_high = [5.0, 1.0, 2.0, 4.0]
-    control_low = [-5.0, -1.0, -2.0, -4.0]
-    irrigation_value = [40.0, 45.0, 35.0, 40.0]
-
-    filename = r"C:\Users\leodg\Documents\TecMTY\Sem_9\Research Internship\notebook\DataSet_ETO_45_days.mat"
-
-    for i in range(len(Areas)):
-        Areas[i] = AreaSimulation(xk_initial=xk_initial[i], Kc=Kc[i],
-                            control_high=control_high[i], control_low=control_low[i],
-                            irrigation_value=irrigation_value[i])
-        Areas[i].run(filename)
-        Areas[i].display(f"Area {i+1}")
-
-\end{lstlisting}
-
+where $t$ is the current time period in minutes, $TIME$ is the total time slot (24 hours), and $TOTAL\:AREAS$ is the total number of irrigation areas at the moment.
 
 \section{Results}
 
-After running the simulation, the following four charts (Fig. \ref{fig:3}) were delivered by the program. They are for the four areas defined in lines 246 to 268 of the script. Fig. \ref{fig:3a} \& \ref{fig:3d} do not seem off by any means. The swift changes that do look visible in plain eye are in Fig. \ref{fig:3b} \& \ref{fig:3c}. \\
+In total, there were three sets of simulations. Those groups vary in similitude by the addition of different aspects in their behavior accordingly to the system dynamics representation and the algorithm or protocol for their control and regulation. Albeit four concurrent irrigation areas' behaviors were replicated, only one of them will be presented here for demonstrative reasons (Area 3).
 
-There are some huge notches where the plants are under some harsh hydric stress states. The reason for this is because, as water becomes utilized by any other plant, they must wait for the resource to be liberated in order to replenish. Additionally, because the areas do not follow any priority queue, it is a tournament to see who reaches first the water. \\
+The first collection is composed of the ideal scenario—the moment when the sensors and actuators of the plant work suitably as expected. These present two moments of vital importance: what happens when one has unlimited water resources and what happens when not.
 
-What the experiment helped demonstrate is that these operating system concepts can be employed in any other area, and one must seize these algorithms to create an opportunity of optimization and synchronization in the daily aspects of the industrial life. \\
+Ideally, as it should, the first case is essentially perfect in that, even though resources are overly wasted, the system never exits from its operating point region and is at its best state. As shown in Fig. \ref{fig:areas_1}, the problem arises when resources are taken accordingly to the dining philosophers scheme, where in some cases the plant comes under hydric stress while it cannot irrigate.
 
-\begin{figure}[h]
-\label{fig:3}
+\begin{figure}[ht]
 \centering
 
 \begin{subfigure}[b]{0.475\textwidth}
-\label{fig:3a}
 \centering
-\includegraphics[width=\textwidth]{area1}
-\caption{Area 1.}
+\includegraphics[width=\textwidth]{area_ideal}
+\caption{Ideal scenario.}
+\label{fig:area_ideal}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.475\textwidth}
-\label{fig:3b}
 \centering
-\includegraphics[width=\textwidth]{area2}
-\caption{Area 2.}
+\includegraphics[width=\textwidth]{area_mutex}
+\caption{Shared resources scenario.}
+\label{fig:area_mutex}
 \end{subfigure}
-\vskip\baselineskip
-\begin{subfigure}[b]{0.475\textwidth}
-\label{fig:3c}
+
+\caption{Irrigation areas simulation.}
+\label{fig:areas_1}
+\end{figure}
+
+There are some huge notches where the plants are under some harsh hydric stress states. The reason for this is because, as water becomes utilized by any other plant, they must wait for the resource to be liberated in order to replenish. Additionally, because the areas do not follow any priority queue, it is a tournament to see who reaches first the water.
+
+When the layout demands the inclusion of device disadvantage, where in this experiment is the allusion that the humidity sensors have a response delay of over an hour at times, it is contemplated that the system will either waste or under-utilize water. In Fig. \ref{fig:areas_2}, the most common of occurrences shows in the form of a squandering of vital resources at most of the times. This is not a huge problem when water is taken to be unlimited. Nonetheless, in the opposite event, it is accepted as a calamity, where the plant comes under hydric stress even though it is overly irrigated.
+
+\begin{figure}[ht]
 \centering
-\includegraphics[width=\textwidth]{area3}
-\caption{Area 3.}
+
+\begin{subfigure}[b]{0.475\textwidth}
+\centering
+\includegraphics[width=\textwidth]{area_delay}
+\caption{Delay-included scenario.}
+\label{fig:area_delay}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.475\textwidth}
-\label{fig:3d}
 \centering
-\includegraphics[width=\textwidth]{area4}
-\caption{Area 4.}
+\includegraphics[width=\textwidth]{area_mutex_delay}
+\caption{Shared resources \& delay scenario.}
+\label{fig:area_mutex_delay}
 \end{subfigure}
 
-\caption{Irrigation Areas Simulation.}
+\caption{Irrigation areas simulation — Delay.}
+\label{fig:areas_2}
+\end{figure}
+
+Up the moment, the mutex-based scheduling does not seem appropriate for the problem. That is corrected when one appreciates the TDM instance. Under TDM, because of the time-slotted division, it can be quickly inferred that it is very likely that resources will be hugely saved with this stratagem. 
+
+Sadly, the project falls down when one understands that this comes at the price of some terrible results from the system going under constant hydric stress, signaling that it is most likely for the crop to fail in spite of the seemingly optimal use of water. This is placed in Fig. \ref{fig:areas_3}.
+
+As one could observe, the irregular watering only perpetuates future damage to the vegetation. When the delay is taken into consideration, the problem accentuates with the forgoing of irrigation instances due to the mishandling of past information for an already critical situation.
+
+\begin{figure}[ht]
+\centering
+
+\begin{subfigure}[b]{0.475\textwidth}
+\centering
+\includegraphics[width=\textwidth]{area_tdm}
+\caption{TDM scenario.}
+\label{fig:area_tdm}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.475\textwidth}
+\centering
+\includegraphics[width=\textwidth]{area_tdm_delay}
+\caption{TDM with delay scenario.}
+\label{fig:area_tdm_delay}
+\end{subfigure}
+
+\caption{Irrigation areas simulation — Time division multiplexing.}
+\label{fig:areas_3}
 \end{figure}
 
 \section{Conclusions}
 
-To conclude, the experiment can be considered a huge success in term of adapting a simulation model for a real system that can make use of synchronization techniques of computer science for the applications of automatic control engineering. \\
+What the experiment helped demonstrate is that these computer science concepts can be employed in any other area, and one must seize these algorithms to create an opportunity of optimization and synchronization in the daily aspects of the industrial life. Notwithstanding, this gives no right or direct pass to deploy the techniques without understanding the risks and advantages of those.
 
-The next step in this arduous scientific process delves into the formalization of the experiment using a real-time embedded system architecture in an actual irrigation area. This will help to solidify the validity of the algorithm and discover any other perturbance that may be affecting the plant. \\
+For example, in the real-life context, the sensor delay must be undoubtedly considered. As was obvious from the plots from the results, this tends to go as the worst-case for the project. This is actually a good thing. Why?
+
+It is extremely important that, as in asymptotic complexity in the analysis of algorithms, the designer must take an effort to limit the results of the worst possible scenario. If done so, it can convey positive results by ensuring that the worst case is the optimal case, and as such, the results are utterly successful.
+
+This is why, even time division multiplexing can have terrible descents in performance, it actually has the best resource allocation from the previously presented algorithms.
+
+To conclude, the experiment can be considered a huge success in term of adapting a simulation model for a real system that can make use of synchronization techniques of computer science for the applications of automatic control engineering.
+
+The next step in this arduous scientific process delves into the formalization of the experiment using a real-time embedded system architecture in an actual irrigation area. This will help to solidify the validity of the algorithm and discover any other perturbance that may be affecting the plant.
 
 \bibliographystyle{ieeetr}
 \bibliography{references}
