@@ -144,50 +144,6 @@ In total, three state matrices and three input matrices were formed depending on
 \end{bmatrix}
 \end{equation}
 
-\subsection{Multithreading}
-
-A process thread is a unit of processor utilization that permits the running of a set of operations within the core of the computer. Modern computers permit the capability of running multiple threads in a single processor. This allows the event of running various processes simultaneously.
-
-While this seems to propose the opportunity to run processes in parallel, it does not work like that. Threads are concurrent: they each advance step by step waiting for the others to continue. Because they interrupt each other little by little at the high frequencies of the computer clock, it can be felt that they operate asynchronously.
-
-The act of running different threads in a single core to apparent a parallel process is called multithreading. Because they do not work in parallel, frequently problems arise relating to the synchronization of resources, where threads may quarrel between each other of the utilization of one. Another problem can be if the threads wait each other to finish, creating a cycle that will never end. This event is termed a deadlock in computer science.
-
-\subsubsection{Dining Philosophers Problem}
-
-To solve the problem, a mind experiment was performed by computer scientists Edsger W. Dijkstra and Tony Hoare back in the 1960s. Let there be \emph{n} philosophers seated in a round table. Before them come plates of noodles, each for each philosopher \cite{osbook}. Fig. \ref{fig:phil} exemplifies this.
-
-\begin{figure}[ht]
-\includegraphics{phil}
-\centering
-\caption{Dining philosophers table.}
-\label{fig:phil}
-\end{figure}
-
-To eat their noodles, they must use a pair of chopsticks. Nonetheless, they find a problem: everyone must share at least one chopstick with their adjacent neighbor. Therefore, one’s right neighbor shares their left chopstick, and the parallel with the left neighbor. Because one must use the whole pair to be able to eat, there comes the question: who eats?
-
-The solution is very simple, although it sounds complex to implement whoever reaches the chopsticks first gets to eat first. All others who did not reach them must wait for the others to eat, hoping not to starve while waiting. When those who are eating finish, they leave the chopsticks back in the table, and let others (whoever reaches them first) to eat. To implement it in code, one must use a concept called a mutex.
-
-A mutex is an abstract object that can be blocked so that if other threads attempt to grab them, they are unable and must wait for the process to release the mutex. Hence, they permit the synchronization of concurrent processes without the fear of robbing the resources at an inappropriate moment.
-
-The operation to collect the mutexes if available is called \emph{wait}, because one waits for them to be free. To release them, one simply \emph{signals} the computer that they are free once again. The algorithm, short and easy, is shown below. \vfill
-
-\begin{algorithm}[H]
-\SetAlgoLined
-\While{True}{
-\textbf{wait} chopstick[\textit{i}]\;
-\textbf{wait} chopstick[(\textit{i}+1) \% \textit{n}]\;
-... \hfill\\
-/* eating */\\
-... \hfill\\
-\textbf{signal} chopstick[\textit{i}]\;
-\textbf{signal} chopstick[(\textit{i}+1) \% \textit{n}]\;
-... \hfill\\
-/* thinking */\\
-... \hfill\\
-}
-\caption{Dining philosophers problem}
-\end{algorithm}
-
 \subsection{Time Division Multiplexing}
 
 In the context of computer networks, it is important to emphasize that the conjunction of parallel processes require the proper organization of time and resources from the central control station. Along the various protocols for the delivery of signals and data across communication channels, multiple techniques have been formulated with the intention of creating the most adequate strategy for every distinct process.
@@ -214,19 +170,63 @@ While this is undoubtedly elegant and powerful, it is tough and impractical to t
 
 Although the traditional outline employs a circular, equal-time division, it is possible to assign priority in terms of statistical information, be it from delivery or receipt of information through the system's complete history. Under this, the protocol adopts the better name of statistical time division multiplexing (STDM).
 
+\subsection{Multithreading}
+
+A process thread is a unit of processor utilization that permits the running of a set of operations within the core of the computer. Modern computers permit the capability of running multiple threads in a single processor. This allows the event of running various processes simultaneously.
+
+While this seems to propose the opportunity to run processes in parallel, it does not work like that. Threads are concurrent: they each advance step by step waiting for the others to continue. Because they interrupt each other little by little at the high frequencies of the computer clock, it can be felt that they operate asynchronously.
+
+The act of running different threads in a single core to apparent a parallel process is called multithreading. Because they do not work in parallel, frequently problems arise relating to the synchronization of resources, where threads may quarrel between each other of the utilization of one. Another problem can be if the threads wait each other to finish, creating a cycle that will never end. This event is termed a deadlock in computer science.
+
+\subsubsection{Dining Philosophers Problem}
+
+To solve the problem, a mind experiment was performed by computer scientists Edsger W. Dijkstra and Tony Hoare back in the 1960s. Let there be \emph{n} philosophers seated in a round table. Before them come plates of noodles, each for each philosopher \cite{osbook}. Fig. \ref{fig:phil} exemplifies this.
+
+\begin{figure}[ht]
+\includegraphics{phil}
+\centering
+\caption{Dining philosophers table.}
+\label{fig:phil}
+\end{figure}
+
+To eat their noodles, they must use a pair of chopsticks. Nonetheless, they find a problem: everyone must share at least one chopstick with their adjacent neighbor. Therefore, one’s right neighbor shares their left chopstick, and the parallel with the left neighbor. Because one must use the whole pair to be able to eat, there comes the question: who eats?
+
+The solution is very simple, although it sounds complex to implement whoever reaches the chopsticks first gets to eat first. All others who did not reach them must wait for the others to eat, hoping not to starve while waiting. When those who are eating finish, they leave the chopsticks back in the table, and let others (whoever reaches them first) to eat. To implement it in code, one must use a concept called a mutex.
+
+A mutex is an abstract object that can be blocked so that if other threads attempt to grab them, they are unable and must wait for the process to release the mutex. Hence, they permit the synchronization of concurrent processes without the fear of robbing the resources at an inappropriate moment.
+
+The operation to collect the mutexes if available is called \emph{wait}, because one waits for them to be free. To release them, one simply \emph{signals} the computer that they are free once again. The algorithm, short and easy, is shown below.
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\While{True}{
+\textbf{wait} chopstick[\textit{i}]\;
+\textbf{wait} chopstick[(\textit{i}+1) \% \textit{n}]\;
+... \hfill\\
+/* eating */\\
+... \hfill\\
+\textbf{signal} chopstick[\textit{i}]\;
+\textbf{signal} chopstick[(\textit{i}+1) \% \textit{n}]\;
+... \hfill\\
+/* thinking */\\
+... \hfill\\
+}
+\caption{Dining philosophers problem}
+\end{algorithm}
+
 \section{Experiment}
 
-\subsection{Program Description}
+\subsection{Cases Description}
 
-The program can therefore be passed to a real computer language where the practical aspects of coding in the real world are put to the test. The language picked for the task was Python, because it is a very simple yet useful language with a broad range of available libraries for things like numeric operations and multithreading.
+The objective of the experiments focuses on the collection of solid information for statistical comparison among the results of the crops status according to the various selected algorithms planted before. In this report, what will be displayed are computer simulations defined from the mathematical models stated in Section 2. This will save time and other resources that can be used for practical experiments on field later on.
 
-As a first job, it is important to define the object to simulate. It is proposed that the irrigation area be defined as a class, where one group several instances to recreate the adjacent groups of irrigation areas. This class must possess various attributes, including the crop constant and threshold levels for simulation.
+In total, there will be four main cases. The first case (Case A) encompasses the perfect case—the scenario where there is water is fully available the whole time, and as such, the irrigation areas are kept under the best care. Every time that the humidity levels fall under the lower control threshold, the area will be watered. When it reaches the higher control threshold, it will stop to avoid waterlogging.
 
-The methods recommended for the class (besides the constructor) include irrigation dynamics function that returns the next state for the plant according to the input variables and the previous states of the system. According to the soil moisture level, the state equation can take one of the many forms planted in Equations 5 to 10.
+Case B is a bit different, as it will focus on the traditional scheme of round-robin irrigation as in time division multiplexing, following a circular pattern for the irrigation. The plants will be watered when it is established that it is their turn and they are under hydric stress. When it is not their turn, they will not receive water even if they are below the control threshold.
 
-When running the simulation, the control action depends on the region where the humidity finds itself, and whether other resources are available. Because all irrigation areas use the same water, this water source will be blocked as a mutex. As a result, when one is in the hydric stress region, it can only be watered if no other area is under irrigation. When it reaches the gravitational water region, it releases the mutex for the rest of the areas to fight for them.
+Case C adopts a new mannerism unto what was presented for Case B. Under Case C, once again the algorithm will be that determined under TDM. Nonetheless, it will attempt to present itself in a greedy fashion. What this means is that, even if the area reaches the higher control threshold, it will keep irrigating. What this allows is the opportunity to collect additional water while it is out of its turn. 
 
-For the case of the TDM application, the user provides a lapse of time of 24 hours (1,140 minutes) of allowance for the individual irrigation of the areas. Unlike the previous algorithm where the allocation of resources depend on who attains it first, TDM just demands for short periods of time defined through modular arithmetic with the formula
+For the cases of the TDM application, the user provides a lapse of time of 24 hours (1,140 minutes) of allowance for the individual irrigation of the areas. Unlike the previous algorithm where the allocation of resources depend on who attains it first, TDM just demands for short periods of time defined through modular arithmetic with the formula
 
 \begin{equation}
 \label{eqn:11}
@@ -235,92 +235,94 @@ For the case of the TDM application, the user provides a lapse of time of 24 hou
 
 where $t$ is the current time period in minutes, $TIME$ is the total time slot (24 hours), and $TOTAL\:AREAS$ is the total number of irrigation areas at the moment.
 
+Lastly, Case D will make use of an adaption of the dining philosophers problem. Establishing the water tank as the equivalent of the abstract mutex object, the program will instinctively give the opportunity to the areas to irrigate if and only if no other area is being watered. That latter area will keep being irrigated until humidity reaches the upper thresholds. Right there, it will forsake the resource and let any other area take it. Keep in mind that there is no priority on who comes next; the first to solicit permission will be the one to get the water.
+
 \section{Results}
 
-In total, there were three sets of simulations. Those groups vary in similitude by the addition of different aspects in their behavior accordingly to the system dynamics representation and the algorithm or protocol for their control and regulation. Albeit four concurrent irrigation areas' behaviors were replicated, only one of them will be presented here for demonstrative reasons (Area 3).
+\subsection{Plots}
 
-The first collection is composed of the ideal scenario—the moment when the sensors and actuators of the plant work suitably as expected. These present two moments of vital importance: what happens when one has unlimited water resources and what happens when not.
+In total, there were four sets of simulations. Those groups vary in similitude by the addition of different aspects in their behavior accordingly to the system dynamics representation and the algorithm or protocol for their control and regulation. Albeit four concurrent irrigation areas' behaviors were replicated, only one of them will be presented here for demonstrative reasons (Area 3).
 
-Ideally, as it should, the first case is essentially perfect in that, even though resources are overly wasted, the system never exits from its operating point region and is at its best state. As shown in Fig. \ref{fig:areas_1}, the problem arises when resources are taken accordingly to the dining philosophers scheme, where in some cases the plant comes under hydric stress while it cannot irrigate.
+The first collection is composed of the ideal scenario—the moment when the sensors and actuators of the plant work suitably as expected. Ideally, as it should, Case A is essentially perfect in that, even though resources are overly wasted, the system never exits from its operating point region and is at its best state. As shown in Fig. \ref{fig:case_a}, this is what should be attained given that the areas generate the greatest outcome.
 
 \begin{figure}[ht]
+\includegraphics[width=0.5\textwidth]{case_a}
 \centering
-
-\begin{subfigure}[b]{0.475\textwidth}
-\centering
-\includegraphics[width=\textwidth]{area_ideal}
-\caption{Ideal scenario.}
-\label{fig:area_ideal}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.475\textwidth}
-\centering
-\includegraphics[width=\textwidth]{area_mutex}
-\caption{Shared resources scenario.}
-\label{fig:area_mutex}
-\end{subfigure}
-
-\caption{Irrigation areas simulation.}
-\label{fig:areas_1}
+\caption{Case A - Full Water Availability.}
+\label{fig:case_a}
 \end{figure}
+
+Case B presents what is expected from the conservative approaches employed routinely in agriculture nowadays.  Under TDM, because of the time-slotted division, it can be quickly inferred that it is very likely that resources will be hugely saved with this stratagem. 
+
+Sadly, the project falls down when one understands that this comes at the price of some terrible results from the system going under constant hydric stress, signaling that it is most likely for the crop to fail in spite of the seemingly optimal use of water. This is placed in Fig. \ref{fig:case_b}. As one could observe, the irregular watering only perpetuates future damage to the vegetation.
+
+\begin{figure}[ht]
+\includegraphics[width=0.5\textwidth]{case_b}
+\centering
+\caption{Case B - Time Division.}
+\label{fig:case_b}
+\end{figure}
+
+To correct this, Case C arrives under pretense of permitting the generation of water saturation on the soil. As waterlogging occurs during the allowed turn, the areas feel safer for the moments when it is not their turn for irrigation. This greedy variation seeks to reduce any plausible and awaited risk when the area is waiting for its chance to be watered. 
+
+While the technique indeed improves the situation, the results are not as drastic considering that more water is being wasted. Even though stress is reduced to the plant, one still not reaches the ideal scenarios from Case A. Fig. \ref{fig:case_c} introduces such images.
+
+\begin{figure}[ht]
+\includegraphics[width=0.5\textwidth]{case_c}
+\centering
+\caption{Case C - Time Division (Greedy).}
+\label{fig:case_c}
+\end{figure}
+
+Now, under the dining philosophers algorithm, one will try to replicate, or at least get close, to the numeric results from Case A. This situation, known here as Case D, will include moments where the plant comes under hydric stress while it cannot irrigate, which is whenever other area is being watered and is not willing to share resources.
 
 There are some huge notches where the plants are under some harsh hydric stress states. The reason for this is because, as water becomes utilized by any other plant, they must wait for the resource to be liberated in order to replenish. Additionally, because the areas do not follow any priority queue, it is a tournament to see who reaches first the water.
 
-When the layout demands the inclusion of device disadvantage, where in this experiment is the allusion that the humidity sensors have a response delay of over an hour at times, it is contemplated that the system will either waste or under-utilize water. In Fig. \ref{fig:areas_2}, the most common of occurrences shows in the form of a squandering of vital resources at most of the times. This is not a huge problem when water is taken to be unlimited. Nonetheless, in the opposite event, it is accepted as a calamity, where the plant comes under hydric stress even though it is overly irrigated.
+Nevertheless, what can be appreciated the most is how minor these setbacks are. The crops have an outstanding response to this strategy, given that less than 10\% percent of the time the plant is dehydrated, compared to the TDM cases. The product is displayed in Fig. \ref{fig:case_d}.
 
 \begin{figure}[ht]
+\includegraphics[width=0.5\textwidth]{case_d}
 \centering
-
-\begin{subfigure}[b]{0.475\textwidth}
-\centering
-\includegraphics[width=\textwidth]{area_delay}
-\caption{Delay-included scenario.}
-\label{fig:area_delay}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.475\textwidth}
-\centering
-\includegraphics[width=\textwidth]{area_mutex_delay}
-\caption{Shared resources \& delay scenario.}
-\label{fig:area_mutex_delay}
-\end{subfigure}
-
-\caption{Irrigation areas simulation — Delay.}
-\label{fig:areas_2}
+\caption{Case D - Dining Philosopher.}
+\label{fig:case_d}
 \end{figure}
 
-Up the moment, the mutex-based scheduling does not seem appropriate for the problem. That is corrected when one appreciates the TDM instance. Under TDM, because of the time-slotted division, it can be quickly inferred that it is very likely that resources will be hugely saved with this stratagem. 
+\subsection{Numerical Data}
 
-Sadly, the project falls down when one understands that this comes at the price of some terrible results from the system going under constant hydric stress, signaling that it is most likely for the crop to fail in spite of the seemingly optimal use of water. This is placed in Fig. \ref{fig:areas_3}.
+With the information presented before, one can compile relevant data that helps to summarize the advantages and disadvantages of all the irrigation techniques according to numerical information. What matters the most for this experiment was the total water consumption in cubic meters ($m^3$) and the percentage of time when the plant is under hydric stress (\%). The data was summarized in Table \ref{tab:results} below.
 
-As one could observe, the irregular watering only perpetuates future damage to the vegetation. When the delay is taken into consideration, the problem accentuates with the forgoing of irrigation instances due to the mishandling of past information for an already critical situation.
-
-\begin{figure}[ht]
+\begin{table}[ht]
 \centering
 
-\begin{subfigure}[b]{0.475\textwidth}
-\centering
-\includegraphics[width=\textwidth]{area_tdm}
-\caption{TDM scenario.}
-\label{fig:area_tdm}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.475\textwidth}
-\centering
-\includegraphics[width=\textwidth]{area_tdm_delay}
-\caption{TDM with delay scenario.}
-\label{fig:area_tdm_delay}
-\end{subfigure}
+\begin{tabular}{|c||c|c|}
+\hline
+Irrigation Technique & Water Consumption ($m^3$) & Time Stressed (\%)\\
+\hline \hline
+Case A & 152.145 & 0.0679 \\
+\hline
+Case B & 87.850 & 63.3735 \\
+\hline
+Case C & 554.4 & 36.1049 \\
+\hline
+Case D & 152.215 & 2.1898 \\
+\hline
+\end{tabular}
 
-\caption{Irrigation areas simulation — Time division multiplexing.}
-\label{fig:areas_3}
-\end{figure}
+\caption{Simulation Results.}
+\label{tab:results}
+\end{table}
+
+It is very evident from the start that Case A presents what is thought as the best of both worlds: an optimal consumption of water and minimal time of stress for the irrigation areas. When TDM is used in Case B, the project has a 42.26\% improvement of resource allocation taking the water into account. Unfortunately, the area is heavily put under dehydration, reaching states of 63.38\% time of water deprivation. 
+
+This was the very reason for the modification of TDM with a greedy perspective of water collection for states of risk. While this surely reduced the period of stress to almost a half of Case B, Case D nonetheless creates an instance where water is overused and such expenses generate an unnecessary waste of the primary item in use, over four times the ideal goal of Case A.
+
+To the moment, the alternatives based on time division have been disappointing. Case D resolves this. Ignoring the momentary instances of water deprivation, the time of stress for the plant is minimal, staying below 5\%. Additionally, water consumption is practically the same as in Case D. Their variance is essentially none.
+
+The experiment thus shows the fantastic opportunities that can be achieved in the agricultural sector thanks to already present algorithms found in operating system theory. This algorithmic reduction implies the existence of even more techniques from computer science that can defy the conventional methods engineers tend to use in agronomy. 
 
 \section{Conclusions}
 
 What the experiment helped demonstrate is that these computer science concepts can be employed in any other area, and one must seize these algorithms to create an opportunity of optimization and synchronization in the daily aspects of the industrial life. Notwithstanding, this gives no right or direct pass to deploy the techniques without understanding the risks and advantages of those.
-
-For example, in the real-life context, the sensor delay must be undoubtedly considered. As was obvious from the plots from the results, this tends to go as the worst-case for the project. This is actually a good thing. Why?
 
 It is extremely important that, as in asymptotic complexity in the analysis of algorithms, the designer must take an effort to limit the results of the worst possible scenario. If done so, it can convey positive results by ensuring that the worst case is the optimal case, and as such, the results are utterly successful.
 
